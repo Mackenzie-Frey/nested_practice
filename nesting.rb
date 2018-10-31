@@ -1,4 +1,3 @@
-
 def stores 
   {
     olive_garden: {

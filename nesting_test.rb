@@ -1,3 +1,4 @@
+require './nesting'
 require 'minitest/autorun'
 require 'minitest/pride'
 
@@ -60,6 +61,7 @@ class NestedTest < MiniTest::Test
   end
 
   def test_all_ingredients_for_Macdonalds
+    skip
     #=======================
     # all_macdonalds_ingredients = <your code here>
     #=======================
