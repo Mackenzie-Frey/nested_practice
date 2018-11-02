@@ -14,7 +14,7 @@ class NestedTest < MiniTest::Test
     assert_equal ["Jeff", "Zach", "Samantha"], employees
   end
 
-  def test_pancake_ingrediants
+  def test_pancake_ingredients
     skip
     #=======================
     # pancake_ingredients = <your code here>
@@ -30,7 +30,7 @@ class NestedTest < MiniTest::Test
     assert_equal 12, risotto_price
   end
 
-  def test_big_mac_ingrediants
+  def test_big_mac_ingredients
     skip
     #=======================
     # big_mac_ingredients = <your code here>
@@ -43,7 +43,7 @@ class NestedTest < MiniTest::Test
     #=======================
     # store_names = <your code here>
     #=======================
-    assert_equal [:Olive_Garden, :Dennys, :Macdonalds], store_names
+    assert_equal [:olive_garden, :dennys, :macdonalds], store_names
   end
 
   def test_list_of_dishes_names_for_olive_garden
@@ -54,7 +54,7 @@ class NestedTest < MiniTest::Test
     assert_equal ['Risotto', 'Steak'], dishes_names
   end
 
-  def test_list_of_employees_accross_all_restaurants
+  def test_list_of_employees_across_all_restaurants
     skip
     #=======================
     # exmployee_names = <your code here>
