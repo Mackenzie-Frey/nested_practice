@@ -52,6 +52,31 @@ class NestedTest < MiniTest::Test
     assert_equal ["Jeff","Zach","Samantha","Bob","Sue","James","Alvin","Simon","Theodore"], exmployee_names
   end
 
+  def test_list_of_all_ingredients_across_all_restaurants
+    skip
+    #=======================
+    # ingredients = <your code here>
+    #=======================
+    assert_equal ["Rice",
+                  "Cheese",
+                  "Butter",
+                  "Beef",
+                  "Garlic",
+                  "Flour",
+                  "Eggs",
+                  "Milk",
+                  "Syrup",
+                  "Flour",
+                  "Eggs",
+                  "Syrup",
+                  "Bun",
+                  "Hamburger",
+                  "Ketchup",
+                  "pickles",
+                  "Potatoes",
+                  "Salt"], ingredients
+  end
+
   def test_full_menu_price_for_olive_garden
     skip
     #=======================
@@ -68,3 +93,5 @@ class NestedTest < MiniTest::Test
     assert_equal ["Bun","Hamburger","Ketchup","pickles","Potatoes","Salt"], all_macdonalds_ingredients
   end
 end
+
+
