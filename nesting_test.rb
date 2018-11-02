@@ -4,6 +4,16 @@ require 'minitest/pride'
 
 class NestedTest < MiniTest::Test
 
+  def test_list_of_olive_garden_employess
+    skip
+    #^^^ Un-Skip each test
+    #=======================
+    # EXAMPLE
+    employees = stores[:olive_garden][:employees]
+    #=======================
+    assert_equal ["Jeff", "Zach", "Samantha"], employees
+  end
+
   def test_pancake_ingrediants
     skip
     #=======================
