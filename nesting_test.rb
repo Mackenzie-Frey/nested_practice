@@ -5,7 +5,6 @@ require 'minitest/pride'
 class NestedTest < MiniTest::Test
 
   def test_list_of_olive_garden_employess
-    skip
     #^^^ Un-Skip each test
     #=======================
     # EXAMPLE
@@ -15,55 +14,61 @@ class NestedTest < MiniTest::Test
   end
 
   def test_pancake_ingredients
-    skip
+
     #=======================
-    # pancake_ingredients = <your code here>
+    pancake_ingredients = stores[:dennys][:dishes][0][:ingredients]
     #=======================
     assert_equal ["Flour", "Eggs", "Milk", "Syrup"], pancake_ingredients
   end
 
   def test_rissotto_price
-    skip
+
     #=======================
-    # risotto_price = <your code here>
+    risotto_price = stores[:olive_garden][:dishes][0][:price]
     #=======================
     assert_equal 12, risotto_price
   end
 
   def test_big_mac_ingredients
-    skip
     #=======================
-    # big_mac_ingredients = <your code here>
+    big_mac_ingredients = stores[:macdonalds][:dishes][0][:ingredients]
     #=======================
     assert_equal ['Bun','Hamburger','Ketchup','pickles'], big_mac_ingredients
   end
-  
+
   def test_list_of_restaurants
-    skip
     #=======================
-    # store_names = <your code here>
+    store_names = stores.keys
     #=======================
     assert_equal [:olive_garden, :dennys, :macdonalds], store_names
   end
 
   def test_list_of_dishes_names_for_olive_garden
-    skip
     #=======================
-    # dishes_names = <your code here>
+    dishes_names = []
+    stores[:olive_garden][:dishes].each do |dish|
+      #require'pry';binding.pry
+        dishes_names << dish[:name]
+      end
+
+    #require'pry';binding.pry
     #=======================
     assert_equal ['Risotto', 'Steak'], dishes_names
   end
 
   def test_list_of_employees_across_all_restaurants
-    skip
     #=======================
-    # exmployee_names = <your code here>
+    exmployee_names_pre = []
+    stores.each do |name, info|
+    #  require'pry';binding.pry
+        exmployee_names_pre << info[:employees]
+    end
+    exmployee_names = exmployee_names_pre.flatten
     #=======================
     assert_equal ["Jeff","Zach","Samantha","Bob","Sue","James","Alvin","Simon","Theodore"], exmployee_names
   end
 
   def test_list_of_all_ingredients_across_all_restaurants
-    skip
     #=======================
     # ingredients = <your code here>
     #=======================
@@ -103,5 +108,3 @@ class NestedTest < MiniTest::Test
     assert_equal ["Bun","Hamburger","Ketchup","pickles","Potatoes","Salt"], all_macdonalds_ingredients
   end
 end
-
-
