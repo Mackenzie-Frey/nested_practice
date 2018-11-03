@@ -1,6 +1,7 @@
 require './nesting'
 require 'minitest/autorun'
 require 'minitest/pride'
+require 'pry'
 
 class NestedTest < MiniTest::Test
 
@@ -51,7 +52,6 @@ class NestedTest < MiniTest::Test
         dishes_names << dish[:name]
       end
 
-    #require'pry';binding.pry
     #=======================
     assert_equal ['Risotto', 'Steak'], dishes_names
   end
@@ -60,7 +60,6 @@ class NestedTest < MiniTest::Test
     #=======================
     exmployee_names_pre = []
     stores.each do |name, info|
-    #  require'pry';binding.pry
         exmployee_names_pre << info[:employees]
     end
     exmployee_names = exmployee_names_pre.flatten
@@ -70,7 +69,13 @@ class NestedTest < MiniTest::Test
 
   def test_list_of_all_ingredients_across_all_restaurants
     #=======================
-    # ingredients = <your code here>
+    ingredients_array = []
+    ingredients = stores.each do |restaurant|
+      restaurant[1][:dishes].each do |dish|
+        ingredients_array << dish[:ingredients]
+      end
+    end
+    ingredients = ingredients_array.flatten
     #=======================
     assert_equal ["Rice",
                   "Cheese",
@@ -93,17 +98,23 @@ class NestedTest < MiniTest::Test
   end
 
   def test_full_menu_price_for_olive_garden
-    skip
     #=======================
-    # full_menu_price = <your code here>
+    price_counter = 0
+    stores[:olive_garden][:dishes].each do |dish|
+      price_counter += dish[:price]
+    end
+    full_menu_price = price_counter
     #=======================
     assert_equal 27, full_menu_price
   end
 
   def test_all_ingredients_for_Macdonalds
-    skip
     #=======================
-    # all_macdonalds_ingredients = <your code here>
+    ingredient_array = []
+    stores[:macdonalds][:dishes].each do |dish|
+      ingredient_array << dish[:ingredients]
+    end
+    all_macdonalds_ingredients = ingredient_array.flatten
     #=======================
     assert_equal ["Bun","Hamburger","Ketchup","pickles","Potatoes","Salt"], all_macdonalds_ingredients
   end
